@@ -2,9 +2,23 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <style>
+            h1 {
+                font-family: fantasy;
+            }
+            .jsClass{
+                color: pink;
+                border: 1px solid brown;
+            }
+
+            .liClass{
+                font-family: monospace;
+                color: blue;
+            }
+        </style>
     </head>
     <body>
-        <h2>Mail'ey Sairuś w ciąży</h2>
+        <h2 id="heading">Mail'ey Sairuś w ciąży</h2>
         <p>Treść artykułu o Mail'ey</p>
         <hr>
         <h2>Operator dźwigu w opałach</h2>
@@ -55,6 +69,38 @@
 
         <a href="#">Strona Główna</a>
         <a href="kontakt/index.html">Kontakt</a>
+
+    <script>
+        //document.body.innerHTML = "atak hackera!"
+        var headingEl = document.getElementById("heading");
+        headingEl.style.backgroundColor = "orange";
+        //headingEl.style.textAlign = "center";
+        //headingEl.innerHTML = "orange"
+        headingEl.className += "jsClass"; 
+        var spanEls = document.getElementsByTagName("span");
+        //Tablica elements jak nazwa wskazuje
+        //HTML Collection
+        var classEls = document.getElementsByClassName("testClass");
+        for (var i = 0; i<classEls.length; i++){
+            classEls[i].innerHTML = "Cat";
+        }
+        //NodeList
+        var selectEls = document.querySelectorAll("p .className");
+        
+        //document.body.appendChild()
+
+        //Create element
+        var cos = document.createElement("div");
+        cos.className += "jsClass";
+
+        var liEls = document.getElementsByTagName("li");
+        for (var i = 0; i<liEls.length; i++){
+            liEls[i].className += "liClass"; 
+        }
+            
+        
+        
+    </script>
 
     </body>
 </html>
